@@ -58,5 +58,21 @@ public class maxSubArray {
 		}
 		return maxSum;
 	}
+	//O(n^2)
+	private static int maxSubarray2(int[] input) {
+		int temp = 0;
+		int max = Integer.MIN_VALUE;
+		for(int i=0;i<input.length;i++) {
+			int sum = 0;
+			for(int j=i;j<input.length;j++) {
+				sum+= input[j];
+				if(sum > max) {
+					max = sum;
+				}
+			}
+			
+		}
+		return max;
+	}
 
 }
